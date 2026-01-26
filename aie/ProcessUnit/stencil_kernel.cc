@@ -4,8 +4,7 @@ void jacobi_2d3_f32(
     adf::input_buffer<float,adf::extents<3*IN_ROW>>& __restrict in0,
     adf::output_buffer<float,adf::extents<ROW>>& __restrict out0
 ){
-    const float* ptr = in0.data();
-
+    
     const float* ptop = in0.data();
     const float* pmid = ptop + IN_ROW;
     const float* pbot = pmid + IN_ROW;
@@ -15,11 +14,11 @@ void jacobi_2d3_f32(
     aie::vector<float,w> k_neighbor = aie::broadcast<float,w>(1.0f);
 
     for (int i = 0; i<ROW; i += w){
-        auto top = aie::load_unaligned<w>(ptop+ i +1);
-        auto mid = aie::load_unaligned<w>(pmid+ i +1);
-        auto bot = aie::load_unaligned<w>(pbot+ i +1);
-        auto left = aie::load_unaligned<w>(pmid + i);
-        auto right = aie::load_unaligned<w>(pmid + i + 2);
+        auto top = aie::load_unaligned_v<w>(ptop+ i +1);
+        auto mid = aie::load_unaligned_v<w>(pmid+ i +1);
+        auto bot = aie::load_unaligned_v<w>(pbot+ i +1);
+        auto left = aie::load_unaligned_v<w>(pmid + i);
+        auto right = aie::load_unaligned_v<w>(pmid + i + 2);
 
         aie::accum<accfloat,w> acc = aie::zeros<accfloat,w>();
         acc = aie::mac(acc, mid,   k_center);
