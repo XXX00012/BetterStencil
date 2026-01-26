@@ -20,7 +20,7 @@ public:
 
         in_plio[0] = input_plio::create(
             graphID + "_in0",
-            plio_32_bits,a
+            plio_32_bits,
             base + graphID + "_in0.txt"
         );
 

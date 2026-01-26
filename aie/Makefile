@@ -40,7 +40,7 @@ HW_EMU_CMD := ./launch_hw_emu.sh -g
 AIE_FREQ = --freqhz=450000000
 KERNEL_FREQ = --freqhz=450000000
 
-KERNEL_FREQ_1 = --freqhz=450000000:TopPL_1.ap_clk
+KERNEL_FREQ_1 = --freqhz=450000000:TopPL_0.ap_clk
 
 
 # compile aie

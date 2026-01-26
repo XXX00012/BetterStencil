@@ -1,0 +1,57 @@
+INFO: [v++ 60-1548] Creating build summary session with primary output /media/4T/home/xianyijiang/BetterStencil/Work/Work.aiecompiler_summary, at Mon Jan 26 22:10:45 2026
+INFO: [v++ 82-10534] Setting option --aie.enable-partition to value 0:50
+INFO: [v++ 82-31] Launching aiecompiler: aiecompiler --config /media/4T/home/xianyijiang/BetterStencil/Work/aie_hw.cfg
+                                           AI Engine Compiler
+                                     Version 2023.2 (linux64-bit)
+                                     SW Build 4023990 on 2023-10-12-17:44:32
+                          Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+                          Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+INFO: [aiecompiler 77-3355] ###[Start]: Reading in platform specification from /usr/xilinx/Vitis/2023.2/base_platforms/xilinx_vck190_base_202320_1/xilinx_vck190_base_202320_1.xpfm
+INFO: [aiecompiler 55-2099] Unable to extract 'pdi_files' from /usr/xilinx/Vitis/2023.2/base_platforms/xilinx_vck190_base_202320_1/hw/hw.xsa to /usr/xilinx/Vitis/2023.2/base_platforms/xilinx_vck190_base_202320_1/hw/extracted/vitis_design_wrapper_0. XSA may not contain 'pdi_files' or the destination directory is read-only
+INFO: [aiecompiler 55-2053] elapsed time for repository (/usr/xilinx/Vivado/2023.2/data/embeddedsw) loading 0 seconds
+INFO: [aiecompiler 77-3354] ###[Finish]:  Reading in platform specification from /usr/xilinx/Vitis/2023.2/base_platforms/xilinx_vck190_base_202320_1/xilinx_vck190_base_202320_1.xpfm
+INFO: [aiecompiler 21-403] Loading part xcvc1902-vsva2197-2MP-e-S
+INFO: [aiecompiler 77-3379] Extracted physical device part from platform is : xcvc1902-vsva2197-2MP-e-S 
+INFO: [aiecompiler 77-297] Cmd Line : /usr/xilinx/Vitis/2023.2/aietools/bin/unwrapped/lnx64.o/aiecompiler --config /media/4T/home/xianyijiang/BetterStencil/Work/aie_hw.cfg 
+INFO: [aiecompiler 77-404] Executing Cmd: ${XILINX_VITIS_AIETOOLS}/tps/lnx64/gcc/bin/g++ -E -std=c++17 -D__ADF_FRONTEND__ -D__AIE_ARCH__=10 -I/usr/xilinx/Vitis/2023.2/aietools/include  -I .  -I /usr/xilinx/Vitis/2023.2/aietools/include -I /media/4T/home/xianyijiang/BetterStencil/./aie -I /media/4T/home/xianyijiang/BetterStencil/./ /media/4T/home/xianyijiang/BetterStencil/./aie/TopGraph.cpp > /media/4T/home/xianyijiang/BetterStencil/./Work/temp/TopGraph.ii
+INFO: [aiecompiler 77-404] Executing Cmd: graph_preprocessor /media/4T/home/xianyijiang/BetterStencil/./Work/temp/TopGraph.ii -o /media/4T/home/xianyijiang/BetterStencil/./Work/temp/TopGraph.processed.ii -report-core-dump  -- -std=c++17  -ftemplate-depth=2048  -Wno-return-stack-address  -Wno-missing-declarations  -Wno-parentheses-equality  -Wno-shift-negative-value  
+In file included from /media/4T/home/xianyijiang/BetterStencil/./aie/TopGraph.cpp:1:
+/media/4T/home/xianyijiang/BetterStencil/./aie/TopGraph.h:23:26: error: use of undeclared identifier 'a'
+            plio_32_bits,a
+                         ^
+/media/4T/home/xianyijiang/BetterStencil/./aie/TopGraph.h:28:24: error: decomposition declaration cannot be declared with type 'adf::output_plio'; declared type must be 'auto' or reference to 'auto'
+            output_plio[i] = output_plio::create(
+                       ^
+/media/4T/home/xianyijiang/BetterStencil/./aie/TopGraph.h:28:25: error: redefinition of 'i'
+            output_plio[i] = output_plio::create(
+                        ^
+/media/4T/home/xianyijiang/BetterStencil/./aie/TopGraph.h:27:18: note: previous definition is here
+        for (int i = 0; i < N; i++){
+                 ^
+/media/4T/home/xianyijiang/BetterStencil/./aie/TopGraph.h:29:51: error: binding 'i' cannot appear in the initializer of its own decomposition declaration
+                graphID + "_out" + std::to_string(i),
+                                                  ^
+/media/4T/home/xianyijiang/BetterStencil/./aie/TopGraph.h:31:58: error: binding 'i' cannot appear in the initializer of its own decomposition declaration
+                base + graphID + "_out" + std::to_string(i) + ".txt"
+                                                         ^
+/media/4T/home/xianyijiang/BetterStencil/./aie/TopGraph.h:37:36: error: 'output_plio' does not refer to a value
+            connect<>(core.out[i], output_plio[i].in[0]);
+                                   ^
+/usr/xilinx/Vitis/2023.2/aietools/include/adf/new_frontend/adf.h:711:9: note: declared here
+  class output_plio : public PLIO {
+        ^
+In file included from /media/4T/home/xianyijiang/BetterStencil/./aie/TopGraph.cpp:1:
+/media/4T/home/xianyijiang/BetterStencil/./aie/TopGraph.h:28:24: error: decomposition declaration '[i]' requires an initializer
+            output_plio[i] = output_plio::create(
+                       ^
+/media/4T/home/xianyijiang/BetterStencil/./aie/TopGraph.cpp:4:20: note: in instantiation of member function 'TopStencilGraph<1>::TopStencilGraph' requested here
+TopStencilGraph<1> topStencil("stencil");
+                   ^
+7 errors generated.
+Error while processing /media/4T/home/xianyijiang/BetterStencil/./Work/temp/TopGraph.ii.
+ERROR: [aiecompiler 77-753] This application has discovered an exceptional condition from which it cannot recover while executing the following command
+  >> graph_preprocessor /media/4T/home/xianyijiang/BetterStencil/./Work/temp/TopGraph.ii -o /media/4T/home/xianyijiang/BetterStencil/./Work/temp/TopGraph.processed.ii -report-core-dump  -- -std=c++17  -ftemplate-depth=2048  -Wno-return-stack-address  -Wno-missing-declarations  -Wno-parentheses-equality  -Wno-shift-negative-value  .
+Please check the output log for errors and fix those before you run the application.
+
+Compilation Failed
+(WARNING:0, CRITICAL-WARNING:0, ERROR:1)

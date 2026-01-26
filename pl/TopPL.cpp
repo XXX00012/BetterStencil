@@ -44,7 +44,7 @@ static void compute(hls::stream<data_t>& fifo_in,hls::stream<data_t>& fifo_out,
                     axis_pkt_stream& stencil_in,axis_pkt_stream& stencil_out ,int N){
         for (int r = 0; r<N ;r ++){
             for (int i = 0; i < IN_ROW*3; i ++){
-                #pragama HLS PIPELINE II = 1
+                #pragma HLS PIPELINE II = 1
                 bool last = (i == IN_ROW*3-1);
                 stencil_in.write(make_pkt(fifo_in.read(),last));
 
