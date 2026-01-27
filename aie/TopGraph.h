@@ -25,7 +25,7 @@ public:
         );
 
         for (int i = 0; i < N; i++){
-            output_plio[i] = output_plio::create(
+            out_plio[i] = output_plio::create(
                 graphID + "_out" + std::to_string(i),
                 plio_32_bits,
                 base + graphID + "_out" + std::to_string(i) + ".txt"
@@ -34,7 +34,7 @@ public:
 
         connect<>(in_plio[0].out[0],core.in[0]);
         for (int i = 0; i < N; i++){
-            connect<>(core.out[i], output_plio[i].in[0]);
+            connect<>(core.out[i], out_plio[i].in[0]);
         }
     }
 };
