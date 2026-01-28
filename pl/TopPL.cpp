@@ -63,7 +63,7 @@ void TopPL(const data_t* dataIn,
            axis_pkt_stream& stencil_out) {
 // 接口配置保持不变
 #pragma HLS INTERFACE m_axi     port=dataIn  offset=slave bundle=gmem0 depth=16384
-#pragma HLS INTERFACE m_axi     port=dataOut offset=slave bundle=gmem1 depth=16384
+#pragma HLS INTERFACE m_axi     port=dataOut offset=slave bundle=gmem0 depth=16384
 #pragma HLS INTERFACE s_axilite port=dataIn  bundle=control
 #pragma HLS INTERFACE s_axilite port=dataOut bundle=control
 #pragma HLS INTERFACE s_axilite port=N       bundle=control
