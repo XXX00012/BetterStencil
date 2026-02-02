@@ -2,7 +2,6 @@
 #include <adf.h>
 #include "../Config.h"
 #include "../ProcessUnit/stencil_kernel.h"
-  // 你的 kernel.h
 using namespace adf;
 
 template<int N>
